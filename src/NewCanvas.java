@@ -111,7 +111,7 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
     transform.setTranslation(vector);
     tg.setTransform(transform);
     tg.addChild(sphere);
-    
+     
     
     //SUN
  // Set up the texture map
