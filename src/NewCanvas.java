@@ -109,9 +109,10 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
     Sphere sphere = new Sphere(0.1f, primflags, ap);
     Vector3f vector = new Vector3f(xloc, height, .0f);
     transform.setTranslation(vector);
+    //transform.invert(transform);
     tg.setTransform(transform);
     tg.addChild(sphere);
-     
+    
     
     //SUN
  // Set up the texture map
@@ -176,7 +177,8 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
 @Override
 public void actionPerformed(ActionEvent arg0) {
 	// TODO Auto-generated method stub
-	boolean hasReached = false;
+
+	float timer = 0.0f;
 	if (!t.isRunning()) {
         t.start();
     }
@@ -228,9 +230,12 @@ public void actionPerformed(ActionEvent arg0) {
 			{
 				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
 			}
-		}
+		} 
+		transform.rotX(timer);
+		timer+= 0.1f;
 		transform.setTranslation(new Vector3f(xloc, height, zloc ));
-	    tg.setTransform(transform);
+		
+		tg.setTransform(transform);
 	    
 	}
 }
