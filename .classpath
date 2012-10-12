@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/1.5.2/lib/ext/j3dcore.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/1.5.2/lib/ext/j3dutils.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/1.5.2/lib/ext/vecmath.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/1.5.2/lib/ext/joalmixer.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/JMF2.1.1e/lib/customizer.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/JMF2.1.1e/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/JMF2.1.1e/lib/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/JMF2.1.1e/lib/multiplayer.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/JMF2.1.1e/lib/sound.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/java3d_1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/java3d_windows_i586_1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/jogl_1.1_windows_i586_1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/org.java3declipse.core_1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/org.java3declipse.logger_1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/org.java3declipse.properties_1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/org.java3declipse.utils.geometry_1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/lib/org.java3declipse.viewers_1.0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
