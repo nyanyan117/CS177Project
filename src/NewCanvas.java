@@ -46,14 +46,7 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
 	private int pcounter = 0;
 	private Sphere sphere2;
   public NewCanvas() {
-//	  TextureLoader myLoader = new TextureLoader( "C:\\Users\\lenovo\\Pictures\\2009-04\\Image0122.jpg", this );
-//	  ImageComponent2D myImage = myLoader.getImage( );
-//	  Background myBack = new Background( );
-//	  myBack.setImage( myImage );
-//	  BoundingSphere myBounds = new BoundingSphere(
-//			    new Point3d( ), 1000.0 );
-//			myBack.setApplicationBounds( myBounds );
-	    
+
 	  setLayout(new BorderLayout());
 	  setBackground(Color.darkGray);
 	  GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
@@ -78,7 +71,6 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
     Color3f black = new Color3f(0.0f, 0.0f, 0.0f);
     Color3f white = new Color3f(1.0f, 1.0f, 1.0f);
     Color3f red = new Color3f(0.7f, .15f, .15f);
-    //Color3f yellow = new Color3f(1.0f,1.0f, 0f );
     Color3f orange = new Color3f(1.0f, 0.5f, 0f);
     
     // Set up the texture map
@@ -97,7 +89,7 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
     ap.setTextureAttributes(texAttr);
  	
     //set up the material
-    ap.setMaterial(new Material(black, black, white, black, 1.0f));
+    //ap.setMaterial(new Material(black, black, white, black, 1.0f));
 	                  
     // Create a ball to demonstrate textures
     int primflags = Primitive.GENERATE_NORMALS +                     
