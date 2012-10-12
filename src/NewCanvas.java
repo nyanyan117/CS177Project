@@ -1,6 +1,7 @@
 import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.GraphicsConfiguration;
 import java.awt.Panel;
@@ -52,17 +53,19 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
 //	  BoundingSphere myBounds = new BoundingSphere(
 //			    new Point3d( ), 1000.0 );
 //			myBack.setApplicationBounds( myBounds );
+	    
 	  setLayout(new BorderLayout());
-      GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
+	  setBackground(Color.darkGray);
+	  GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
       Canvas3D c = new Canvas3D(config);
 	    add("Center", c);
       c.addKeyListener(this);
-      Panel p =new Panel();
+      Panel p = new Panel();
       go.addActionListener(this);
       go.addKeyListener(this);
       p.add(go); 
       add("North",p);
-	   
+ 
 	t = new Timer(100,this);
 
     // Create a structure to contain objects
@@ -178,7 +181,6 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
 public void actionPerformed(ActionEvent arg0) {
 	// TODO Auto-generated method stub
 
-	float timer = 0.0f;
 	if (!t.isRunning()) {
         t.start();
     }
@@ -187,7 +189,6 @@ public void actionPerformed(ActionEvent arg0) {
 		if( xloc < 0.7 && xloc >= 0 && height <= 0.7 && height > 0)
 		{
 			xloc += 0.1f;
-			//zloc += 0.1f;
 			if(0.49f > (xloc*xloc)){
 			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
 			}
@@ -199,7 +200,6 @@ public void actionPerformed(ActionEvent arg0) {
 		else if( xloc <= 0.8 && xloc >= 0 && height >= -0.7 && height <= 0.3)
 		{
 			xloc -= 0.1f;
-			//zloc -= 0.1f;
 			if(0.49f > (xloc*xloc))
 			{
 			height = -1 *(float) Math.sqrt((0.49f - (xloc*xloc)));
@@ -212,7 +212,6 @@ public void actionPerformed(ActionEvent arg0) {
 		else if( xloc > -0.6 && xloc <= 0 && height >= -0.7 && height < 0)
 		{
 			xloc -= 0.1f;
-			//zloc -= 0.1f;
 			if(0.49f > (xloc*xloc))
 			{
 				height = -(float) Math.sqrt((0.49f - (xloc*xloc)));
@@ -221,7 +220,6 @@ public void actionPerformed(ActionEvent arg0) {
 		else
 		{
 			xloc += 0.1f;
-			//zloc += 0.1f;
 			if(0.49f > (xloc*xloc))
 			{
 			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
@@ -231,8 +229,6 @@ public void actionPerformed(ActionEvent arg0) {
 				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
 			}
 		} 
-		transform.rotX(timer);
-		timer+= 0.1f;
 		transform.setTranslation(new Vector3f(xloc, height, zloc ));
 		
 		tg.setTransform(transform);
