@@ -45,6 +45,7 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
 	private Button go = new Button("Go");
 	private int pcounter = 0;
 	private Sphere sphere2;
+	private Sphere sphere3;
   public NewCanvas() {
 
 	  setLayout(new BorderLayout());
@@ -89,7 +90,7 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
     ap.setTextureAttributes(texAttr);
  	
     //set up the material
-    //ap.setMaterial(new Material(black, black, white, black, 1.0f));
+    ap.setMaterial(new Material(black, black, white, black, 1.0f));
 	                  
     // Create a ball to demonstrate textures
     int primflags = Primitive.GENERATE_NORMALS +                     
@@ -141,6 +142,41 @@ public class NewCanvas extends Applet implements ActionListener, KeyListener{
     group.addChild(tg);
     group.addChild(sphere2);
 
+/****/
+    
+    //Set up the texture map
+    TextureLoader loader3 = new TextureLoader("C:\\Users\\lenovo\\Pictures\\2009-04\\SunTexture.png", "LUMINANCE", new Container());
+    Texture texture3 = loader3.getTexture();
+    texture.setBoundaryModeS(Texture.WRAP);
+    texture.setBoundaryModeT(Texture.WRAP);
+    texture.setBoundaryColor( new Color4f( 0.0f, 1.0f, 0.0f, 0.0f ) );
+	
+    // Set up the texture attributes 
+    //could be REPLACE, BLEND or DECAL instead of MODULATE
+    TextureAttributes texAttr3 = new TextureAttributes();
+    texAttr3.setTextureMode(TextureAttributes.BLEND);
+    Appearance ap3 = new Appearance();
+    ap3.setTexture(texture3);
+    ap3.setTextureAttributes(texAttr3);
+ 	
+    //set up the material
+    ap3.setMaterial(new Material(red, orange, red, orange, 1.0f));
+	                  
+    // Create a ball to demonstrate textures
+    int primflags3 = Primitive.GENERATE_NORMALS +                     
+                    Primitive.GENERATE_TEXTURE_COORDS; 
+    
+    //set second shape
+    sphere3 = new Sphere(0.2f, primflags3, ap3);    
+    Vector3f vector3 = new Vector3f(0f, -0.5f, .5f);
+    transform.setTranslation(vector3);
+    
+    
+    //group.addChild(tg);
+    group.addChild(sphere3);
+   
+/**/
+    
     // Create lights
     Color3f light1Color = new Color3f(1f, 1f, 1f);
     BoundingSphere bounds =
@@ -178,49 +214,93 @@ public void actionPerformed(ActionEvent arg0) {
     }
 	else
 	{
-		if( xloc < 0.7 && xloc >= 0 && height <= 0.7 && height > 0)
-		{
-			xloc += 0.1f;
-			if(0.49f > (xloc*xloc)){
-			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
+//		if( xloc < 0.7 && xloc >= 0 && height <= 0.7 && height > 0)
+//		{
+//			xloc += 0.1f;
+//			if(0.49f > (xloc*xloc)){
+//			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
+//			}
+//			else
+//			{
+//				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+//			}
+//		}
+//		else if( xloc <= 0.8 && xloc >= 0 && height >= -0.7 && height <= 0.3)
+//		{
+//			xloc -= 0.1f;
+//			if(0.49f > (xloc*xloc))
+//			{
+//			height = -1 *(float) Math.sqrt((0.49f - (xloc*xloc)));
+//			}
+//			else
+//			{
+//				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+//			}
+//		}
+//		else if( xloc > -0.6 && xloc <= 0 && height >= -0.7 && height < 0)
+//		{
+//			xloc -= 0.1f;
+//			if(0.49f > (xloc*xloc))
+//			{
+//				height = -(float) Math.sqrt((0.49f - (xloc*xloc)));
+//			}
+//		}
+//		else
+//		{
+//			xloc += 0.1f;
+//			if(0.49f > (xloc*xloc))
+//			{
+//			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
+//			}
+//			else
+//			{
+//				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+//			}
+//		}
+		
+		if( xloc > 0.6 && xloc < 0 && height <= 0.7 && height > 0)
+			{
+				xloc += 0.1f;
+				if(0.49f > (xloc*xloc)){
+				height = (float) Math.sqrt((0.49f - (xloc*xloc)));
+				}
+				else
+				{
+					height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+				}
+			}
+			else if( xloc <= 0.8 && xloc >= 0 && height >= -0.7 && height <= 0.3)
+			{
+				xloc -= 0.1f;
+				if(0.49f > (xloc*xloc))
+				{
+				height = -1 *(float) Math.sqrt((0.49f - (xloc*xloc)));
+				}
+				else
+				{
+					height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+				}
+			}
+			else if( xloc > -0.6 && xloc <= 0 && height >= -0.7 && height < 0)
+			{
+				xloc -= 0.1f;
+				if(0.49f > (xloc*xloc))
+				{
+					height = -(float) Math.sqrt((0.49f - (xloc*xloc)));
+				}
 			}
 			else
 			{
-				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+				xloc += 0.1f;
+				if(0.49f > (xloc*xloc))
+				{
+				height = (float) Math.sqrt((0.49f - (xloc*xloc)));
+				}
+				else
+				{
+					height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+				}
 			}
-		}
-		else if( xloc <= 0.8 && xloc >= 0 && height >= -0.7 && height <= 0.3)
-		{
-			xloc -= 0.1f;
-			if(0.49f > (xloc*xloc))
-			{
-			height = -1 *(float) Math.sqrt((0.49f - (xloc*xloc)));
-			}
-			else
-			{
-				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
-			}
-		}
-		else if( xloc > -0.6 && xloc <= 0 && height >= -0.7 && height < 0)
-		{
-			xloc -= 0.1f;
-			if(0.49f > (xloc*xloc))
-			{
-				height = -(float) Math.sqrt((0.49f - (xloc*xloc)));
-			}
-		}
-		else
-		{
-			xloc += 0.1f;
-			if(0.49f > (xloc*xloc))
-			{
-			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
-			}
-			else
-			{
-				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
-			}
-		} 
 		transform.setTranslation(new Vector3f(xloc, height, zloc ));
 		
 		tg.setTransform(transform);
