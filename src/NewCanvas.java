@@ -214,49 +214,49 @@ public void actionPerformed(ActionEvent arg0) {
     }
 	else
 	{
-//		if( xloc < 0.7 && xloc >= 0 && height <= 0.7 && height > 0)
-//		{
-//			xloc += 0.1f;
-//			if(0.49f > (xloc*xloc)){
-//			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
-//			}
-//			else
-//			{
-//				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
-//			}
-//		}
-//		else if( xloc <= 0.8 && xloc >= 0 && height >= -0.7 && height <= 0.3)
-//		{
-//			xloc -= 0.1f;
-//			if(0.49f > (xloc*xloc))
-//			{
-//			height = -1 *(float) Math.sqrt((0.49f - (xloc*xloc)));
-//			}
-//			else
-//			{
-//				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
-//			}
-//		}
-//		else if( xloc > -0.6 && xloc <= 0 && height >= -0.7 && height < 0)
-//		{
-//			xloc -= 0.1f;
-//			if(0.49f > (xloc*xloc))
-//			{
-//				height = -(float) Math.sqrt((0.49f - (xloc*xloc)));
-//			}
-//		}
-//		else
-//		{
-//			xloc += 0.1f;
-//			if(0.49f > (xloc*xloc))
-//			{
-//			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
-//			}
-//			else
-//			{
-//				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
-//			}
-//		}
+		if( xloc < 0.7 && xloc >= 0 && height <= 0.7 && height > 0)
+		{
+			xloc += 0.1f;
+			if(0.49f > (xloc*xloc)){
+			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
+			}
+			else
+			{
+				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+			}
+		}
+		else if( xloc <= 0.8 && xloc >= 0 && height >= -0.7 && height <= 0.3)
+		{
+			xloc -= 0.1f;
+			if(0.49f > (xloc*xloc))
+			{
+			height = -1 *(float) Math.sqrt((0.49f - (xloc*xloc)));
+			}
+			else
+			{
+				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+			}
+		}
+		else if( xloc > -0.6 && xloc <= 0 && height >= -0.7 && height < 0)
+		{
+			xloc -= 0.1f;
+			if(0.49f > (xloc*xloc))
+			{
+				height = -(float) Math.sqrt((0.49f - (xloc*xloc)));
+			}
+		}
+		else
+		{
+			xloc += 0.1f;
+			if(0.49f > (xloc*xloc))
+			{
+			height = (float) Math.sqrt((0.49f - (xloc*xloc)));
+			}
+			else
+			{
+				height = (float) Math.sqrt((xloc*xloc) - 0.49f);	
+			}
+		}
 		
 		if( xloc > 0.6 && xloc < 0 && height <= 0.7 && height > 0)
 			{
